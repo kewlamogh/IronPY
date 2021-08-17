@@ -6,7 +6,7 @@ class Iron():
         rep = htmlCode
         for param in params:
             try:
-                rep = rep.replace(f"|%{param}%|", self.vars[param])
+                rep = rep.replace(f"|%{param}%|", str(self.vars[param]))
             except:
                 raise ReferenceError(f"Undefined Variable: {param}")
         self.iron.write(rep)
